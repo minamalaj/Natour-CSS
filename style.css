@@ -1,0 +1,86 @@
+  
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+
+* { 
+    /* Browsers will add some form of padding /margin to page*/
+    margin: 0; 
+    padding: 0; 
+    /* Border box will change box model so no padding/margin will influence height /width of page  */
+    box-sizing: border-box;
+}
+
+
+body { 
+    /* everything related to font will be specified here */
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400; 
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777; 
+    padding: 30px; 
+}
+
+.header { 
+    height: 95vh; 
+    /* can also specify another direction, to right bottom will make gradient cross diagonally */
+    /* third argument specifies the opacity  */
+    background-image: linear-gradient(
+        to right bottom,
+        rgb(126, 213, 111, 0.8), 
+        rgb(40, 180, 133, 0.8)), 
+        url(img/hero.jpg);
+    /* whatever the width of the viewport it will always try to fit the element to the box  */
+    background-size: cover;
+    /* ensures whatever the size, the top of the image always stays at the top of the container  */
+    background-position: top;
+    /* Start at top left corner and move clockwise when specifying corners */
+    /* Making it 75vh will make it responsive to the 95vh you specified above */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative; 
+}
+
+.logo-box { 
+    position: absolute; 
+    top: 40px; 
+    left: 40px; 
+}
+
+.logo { 
+    height: 35px; 
+}
+
+.text-box { 
+    position: absolute;
+    top: 40%; 
+    left: 50%;
+    /* That's because this 50% is no longer relative to parent element, but to 50% of the height and width of itself.*/
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary { 
+    color: #fff; 
+    text-transform: uppercase;
+}
+
+.heading-primary-main { 
+    /* Use block elements to stack this on top of the sub heading */
+    /* Block elements occupy entire width they have available and create line breaks after and before them */
+    display: block;
+    font-size: 60px; 
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub { 
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
+
