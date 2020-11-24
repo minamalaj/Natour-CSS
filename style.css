@@ -61,6 +61,8 @@ body {
     left: 50%;
     /* That's because this 50% is no longer relative to parent element, but to 50% of the height and width of itself.*/
     transform: translate(-50%, -50%);
+    /* see .btn-white display. inline-block elements are treated as text, so to center the btn element you can use */
+    text-align: center;
 }
 
 .heading-primary { 
@@ -69,6 +71,7 @@ body {
     /* this property determines whether the back part of an element when we transform it remains visible or hidden */
     /* this is a hack that fixes some type of glitch that can happen with animations. */
     backface-visibility: hidden;
+    margin-bottom: 60px; 
 }
 
 .heading-primary-main { 
@@ -121,3 +124,30 @@ body {
     }
 }
 
+/* Link is a pseudo-class of a selector, used to style elements under certain conditions */
+.btn:link, 
+.btn:visited { 
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px; 
+    /* Should always do this if you want to give some padding, or height/width to elements */
+    display: inline-block;
+    border-radius: 100px; 
+    transition: all .2s; 
+}
+
+.btn:hover { 
+    transform: translateY(-3px);
+    /* 1. x-value shadow, 2. y-value shadow, 3. blur, 4: color shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active { 
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white { 
+    background-color: #fff;
+    color: #777;
+}
