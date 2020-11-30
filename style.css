@@ -7,17 +7,24 @@ Dark green: #28b485
 */
 
 
-* { 
+*, 
+*:after, 
+*:before { 
     /* Browsers will add some form of padding /margin to page*/
     margin: 0; 
     padding: 0; 
     /* Border box will change box model so no padding/margin will influence height /width of page  */
-    box-sizing: border-box;
+    /* Should use inheritance when you can, setting the box-size property to inherit, because it makes 
+    it slightly easier to change box-siing in plugins or other components, where we might want to use a different property for box-sizing;*/
+    box-sizing: inherit;
 }
 
 html { 
     /* Set base font size to 10 pixels because it is easy to calculate rem: helps with responsive design  */
-    font-size: 10px;
+    /* this is bad practice because it overwrites the front-size given by browser - 
+        - this removes the ability for users (say with bad eyesight) to manually change their font size */
+        /* default font size is 16px, so we need to change this to a percentage to reflect 10px: so 10/16 = 62.5% */
+    font-size: 62.5%;
 }
 
 
@@ -29,6 +36,7 @@ body {
     line-height: 1.7;
     color: #777; 
     padding: 3rem; 
+    box-sizing: border-box;
 }
 
 .header { 
@@ -54,6 +62,7 @@ body {
     position: absolute; 
     top: 4rem; 
     left: 4rem; 
+    /* rem is not supported in internet explorer browser, but this is true of many techniques using advanced css */
 }
 
 .logo { 
