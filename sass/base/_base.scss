@@ -1,0 +1,24 @@
+*, 
+*:after, 
+*:before { 
+    /* Browsers will add some form of padding /margin to page*/
+    margin: 0; 
+    padding: 0; 
+    /* Border box will change box model so no padding/margin will influence height /width of page  */
+    /* Should use inheritance when you can, setting the box-size property to inherit, because it makes 
+    it slightly easier to change box-siing in plugins or other components, where we might want to use a different property for box-sizing;*/
+    box-sizing: inherit;
+}
+
+html { 
+    /* Set base font size to 10 pixels because it is easy to calculate rem: helps with responsive design  */
+    /* this is bad practice because it overwrites the front-size given by browser - 
+        - this removes the ability for users (say with bad eyesight) to manually change their font size */
+        /* default font size is 16px, so we need to change this to a percentage to reflect 10px: so 10/16 = 62.5% */
+    font-size: 62.5%;
+}
+
+
+body { 
+    box-sizing: border-box;
+}

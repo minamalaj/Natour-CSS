@@ -1,0 +1,64 @@
+
+.btn { 
+    /* Link is a pseudo-class of a selector, used to style elements under certain conditions */
+    &:link, 
+    &:visited { 
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem; 
+        /* Should always do this if you want to give some padding, or height/width to elements */
+        display: inline-block;
+        border-radius: 10rem; 
+        transition: all .2s; 
+        position: relative;
+
+        &:hover { 
+            transform: translateY(-3rem);
+            /* 1. x-value shadow, 2. y-value shadow, 3. blur, 4: color shadow */
+            box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        
+            &::after { 
+                transform: scaleX(1.3), scaleY(1.5); 
+                /* Putting to opacity zero is the trick for fading something out  */
+                opacity: 0; 
+            }
+        }
+
+        &:active { 
+            transform: translateY(-1rem);
+            box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+        }
+
+        &--white { 
+            background-color: $color-white;
+            color: #777;    
+
+            &::after {
+                background-color: $color-white;
+            }
+        }
+
+        &::after { 
+            /* In order for after pseudo element to appear, need to specify content property. */
+            /* ALWAYS necessary, have to speciify otherwise it wont appear, and the same applies to the display property  */
+            content: ""; 
+            display: inline-block; 
+            height: 100%; 
+            width: 100%; 
+            border-radius: 10rem; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            z-index: -1;
+            /* You always put the transition property on the initial state */
+            transition: all .4s;
+        }
+
+        &--animated { 
+            animation: moveInBottom 1s ease-out .5s;
+            /* What this does is automatically apply the styles to 0% before the animation starts */
+            animation-fill-mode: backwards;
+        }
+
+    }
+} 

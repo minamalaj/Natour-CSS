@@ -1,0 +1,40 @@
+
+.header { 
+    height: 95vh; 
+    /* can also specify another direction, to right bottom will make gradient cross diagonally */
+    /* third argument specifies the opacity  */
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, .8), 
+        rgba($color-primary-light, .8)),
+        url(img/hero.jpg);
+    /* whatever the width of the viewport it will always try to fit the element to the box  */
+    background-size: cover;
+    /* ensures whatever the size, the top of the image always stays at the top of the container  */
+    background-position: top;
+    /* Start at top left corner and move clockwise when specifying corners */
+    /* Making it 75vh will make it responsive to the 95vh you specified above */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative; 
+
+    &__logo-box { 
+        position: absolute; 
+        top: 4rem; 
+        left: 4rem; 
+        /* rem is not supported in internet explorer browser, but this is true of many techniques using advanced css */
+    }
+
+    &__logo { 
+        height: 3.5rem; 
+    }
+
+    &__text-box { 
+        position: absolute;
+        top: 40%; 
+        left: 50%;
+        /* That's because this 50% is no longer relative to parent element, but to 50% of the height and width of itself.*/
+        transform: translate(-50%, -50%);
+        /* see .btn-white display. inline-block elements are treated as text, so to center the btn element you can use */
+        text-align: center;
+    }
+}
