@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minamalaj/Natour-CSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minamalaj/Natour-CSS/issues"
+  },
+  "homepage": "https://github.com/minamalaj/Natour-CSS#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
