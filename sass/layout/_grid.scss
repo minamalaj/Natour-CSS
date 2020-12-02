@@ -2,7 +2,6 @@
     // convention for width is 1140px, but we want this in rem to responsive, so divide by 10 
     // what max-width means is if we have enough available space then it will have width specified
     max-width: $grid-width;
-    background-color: yellow; 
     // center the row: trick for centering block elements within another block element
     margin: 0 auto; 
     margin-bottom: $gutter-vertical;
@@ -19,7 +18,6 @@
     // * this allows to select ones that contain/include 
     // $ this allows to select ones that end
     [class^="col-"] { 
-        background-color: lightblue;
         float: left; 
 
         &:not(:last-child) {
