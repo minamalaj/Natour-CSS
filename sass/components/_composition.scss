@@ -34,11 +34,11 @@
             box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
             z-index: 20; // this is what brings them forward when hovered
         }
-
-        &:hover &__photo:not(:hover) { 
-            transform: scale(.95)
-        }
-        // Whatever photo is not hovered, other photos scale down in sie
-        // composition:hover composition__photo:not(:hover) 
     }
+
+    &:hover &__photo:not(:hover) { 
+        transform: scale(.95);
+    }
+    // Whatever photo is not hovered, other photos scale down in sie
+    // composition:hover composition__photo:not(:hover) 
 }
