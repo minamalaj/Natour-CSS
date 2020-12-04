@@ -38,6 +38,15 @@
             }
         }
 
+        &--green { 
+            background-color: $color-primary;
+            color: $color-white;  
+
+            &::after {
+                background-color: $color-white;
+            }
+        }
+
         &::after { 
             /* In order for after pseudo element to appear, need to specify content property. */
             /* ALWAYS necessary, have to speciify otherwise it wont appear, and the same applies to the display property  */

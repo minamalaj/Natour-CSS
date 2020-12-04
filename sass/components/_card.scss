@@ -56,6 +56,8 @@
          height: 23rem;
          background-blend-mode: screen;
          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+         border-top-left-radius: 3px;
+         border-top-right-radius: 3px;
 
         &--1 { 
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
@@ -63,12 +65,12 @@
         }
 
         &--2 { 
-            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
             url(../img/nat-2.jpg);
         }
 
         &--3 { 
-            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
             url(../img/nat-3.jpg);
         }
     }
@@ -94,6 +96,18 @@
             background-image: linear-gradient(to right bottom, 
             rgba($color-secondary-light, .85), 
             rgba($color-secondary-dark, .85));
+        }
+
+        &--2 { 
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-primary-light, .85), 
+            rgba($color-primary-dark, .85));
+        }
+
+        &--3 { 
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-tertiary-light, .85), 
+            rgba($color-tertiary-dark, .85));
         }
     }
 
@@ -122,6 +136,8 @@
         top: 50%;
         left: 50%; 
         transform: translate(-50%, -50%);
+        width: 90%; 
+        text-align: center;
     }
 
     &__price-box { 
